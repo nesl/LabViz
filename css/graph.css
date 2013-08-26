@@ -1,0 +1,23 @@
+/* graph */
+
+@import url('http://twitter.github.com/bootstrap/assets/css/bootstrap.css');
+
+.well
+{
+    background-color: #444;
+}
+
+.targetpane
+{
+    color: #888;
+    background-color: #1B1B1B;
+    border: 1px solid #888;
+    border-radius: 3px;
+    padding: 0px 5px 0px 5px;
+}
+
+.bodycontainer {
+    height: 50px !important;
+    white-space: nowrap;
+    overflow-x: hidden;
+}

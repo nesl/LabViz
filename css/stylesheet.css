@@ -1,0 +1,27 @@
+/* Main marketing message and sign up button */
+.jumbotron {
+  margin: 60px 0;
+  text-align: center;
+}
+.jumbotron h1 {
+  font-size: 72px;
+  line-height: 1;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+.footer {
+  margin: 10px 0px 40px 0px;
+}
+
+.graph-row {
+}
+.loader {
+  width: 100%;
+  min-height: 200px;
+  background-image: url('../img/ajax-loader.gif');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
