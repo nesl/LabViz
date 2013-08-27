@@ -12,7 +12,7 @@
     <div class="container">
       <div class="navbar">
         <div class="navbar-inner">
-          <a class="brand" href="#">NESL Xively Feed Viewer</a>
+          <a class="brand" href="#">UCLA - Networked and Embedded Systems Laboratory</a>
           <ul class="nav">
             <!-- 
             <li class="active"><a href="#">Dakar</a></li>
@@ -23,55 +23,62 @@
       
       <div class="row">
         <div class="jumbotron">
-          <h1>Feeds from NESL, at your fingertips!</h1>
-          <p class="lead">Adapted by Aamoy</p>
+          <h1>LabViz</h1>
+          <p class="lead">Feeds from NESL, at your fingertips!</p>
         </div>
       </div>
       <div class="row">
         <div class="span6 offset3 pagination-centered">
           <form action="#" class="form-inline">
-            <strong>Configure...</strong>
-            <br>
-            <br>
+            <strong>Configure Feed (Required):</strong>
+            <br />
+            <br />
             <input id="key" type="text" placeholder="API Key">
             <input id="feed" type="text" placeholder="Feed ID">
-            <br>
-            <input id="name" type="text" placeholder="Feed Name">
-            <input id="channel" type="text" placeholder="Channel">
-            <br>
-	    <input id="startDay" type="text" placeholder="Start Date">
- 	    <input id="startTime" type="text" placeholder="Start Time">
-            <br>
-	    <input id="endDay" type="text" placeholder="End Date">
- 	    <input id="endTime" type="text" placeholder="End Time">
-	    <br>
-	    <input id="interval" type="text" placeholder="Data Interval">
-	    <input id="operation" type="text" placeholder="Operation">
-	    <br>
-            <br>
+            <br />
+            <br />
+            <strong>Configure Time (Optional):</strong>
+            <br />
+            <br />
+		    <input id="startDay" type="text" placeholder="Start Date (YYYY-MM-DD)">
+ 	   		<input id="startTime" type="text" placeholder="Start Time (HH-MM-SS)">
+ 	   		<br />
+	   		<input id="endDay" type="text" placeholder="End Date (YYYY-MM-DD)">
+ 	    	<input id="endTime" type="text" placeholder="End Time (HH-MM-SS)">
+ 	    	<br />
+            <br />
+            <strong>Configure Options (Optional):</strong>
+            <br />
+            <br />
+	    	<input id="interval" type="text" placeholder="Data Interval">
+	    	<br />
+	    	<input id="operation" type="text" placeholder="Operation ('average' or 'sum')">
+	    	<br />
+	    	<input id="channel" type="text" placeholder="Channel">
+	    	<br />
+            <br />
 	    <strong>Punch it.</strong>
-	    <br>
+	    <br />
             <button id="new-feed" class="btn btn-primary"><i class="icon-plus icon-white"></i></button>
           </form>
           <div id="new-feed-alert" class="alert hide">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <strong>Warning!</strong> There seems to be a problem- please check your fields.
+            <strong>Warning!</strong> Best check yo self, you're not looking too good.
           </div>
-          <button class="btn btn-link sample-data" data-key='IHFO5YRkTEcVCRbVc4yEwDDDgoBjolkNaJBjgvEopqo5x9IC' data-feed='118083' data-name='NESL Door Sensor' data-channel='Door' data-startDay='2013-06-25' data-startTime='00:00:00' data-endDay='2013-07-1' data-endTime='00:00:00' data-interval='3600' data-operation='sum'>Door Sensor</button>
-          <button class="btn btn-link sample-data" data-key='V2fqbNb9Pc2uXYz9rogs5wOUyNh6j0F7xuqJNwoky5NOaKoO' data-feed='128337' data-name='NESL Light Sensor' data-channel='Light' data-startDay='2013-06-25' data-startTime='00:00:00' data-endDay='2013-07-1' data-endTime='00:00:00' data-interval='3600' data-operation='average'>Light Sensor</button>
-          <button class="btn btn-link sample-data" data-key='qosKyJKXo16AV8lbKOnZxRfeHQFhRRSSgNfVfoVvGYnGfbsL' data-feed='118086' data-name='NESL Temperature Sensor' data-channel='Temperature' data-startDay='2013-06-25' data-startTime='00:00:00' data-endDay='2013-07-1' data-endTime='00:00:00' data-interval='3600' data-operation='average'>Temp Sensor</button>
+          <button class="btn btn-link sample-data" data-key='IHFO5YRkTEcVCRbVc4yEwDDDgoBjolkNaJBjgvEopqo5x9IC' data-feed='118083'  data-channel='Door' data-startDay='2013-06-25' data-startTime='00:00:00' data-endDay='2013-07-01' data-endTime='00:00:00' data-interval='3600' data-operation='sum'>Door Sensor</button>
+          <button class="btn btn-link sample-data" data-key='V2fqbNb9Pc2uXYz9rogs5wOUyNh6j0F7xuqJNwoky5NOaKoO' data-feed='128337'  data-channel='' data-startDay='2013-06-25' data-startTime='00:00:00' data-endDay='2013-07-01' data-endTime='00:00:00' data-interval='3600' data-operation=''>Light Sensor</button>
+          <button class="btn btn-link sample-data" data-key='qosKyJKXo16AV8lbKOnZxRfeHQFhRRSSgNfVfoVvGYnGfbsL' data-feed='118086'  data-channel='' data-startDay='2013-06-25' data-startTime='00:00:00' data-endDay='2013-07-01' data-endTime='00:00:00' data-interval='3600' data-operation=''>Temp Sensor</button>
         </div>
       </div>
  
- 
-<div id="container" style="height: 500px; min-width: 500px"></div>
-      
-      <hr>
+ 	<div id="graphs">
+ 	<hr />
+    </div>
       
       <div class="footer">
         <small>
           Made by <a href="mailto:aamoyg@linux.ucla.edu">Aamoy Gupta</a> - &copy; 2013 - Source code under the MIT License</a><br/>
-          Based on an original idea by <a href="http://twitter.com/sarfata">@sarfata</a>. Built and functioning, thanks to <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a>, <a href="http://momentjs.com/">Moment.js</a> and the <a href="http://code.highcharts.com/">Highcharts</a> graph library.
+          Based on an original idea by <a href="http://twitter.com/sarfata">@sarfata</a>. Built in a few hours thanks to <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a>, <a href="http://momentjs.com/">Moment.js</a> and the <a href="http://code.highcharts.com/">Highcharts</a> graph library.
         </small>
       </div>
       
